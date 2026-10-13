@@ -1,0 +1,202 @@
+:root {
+  --fundo: #14101f;
+  --card: #1e1830;
+  --lilas: #b794f6;
+  --lilas-escuro: #8b5cf6;
+  --texto: #ece6f7;
+  --borda: #3a2f5c;
+  --fraca: #ef4444;
+  --media: #f59e0b;
+  --forte: #22c55e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+main {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 440px;
+}
+
+h1 {
+  color: var(--lilas);
+  margin-bottom: 24px;
+  font-size: 1.6rem;
+}
+
+h2 {
+  color: var(--lilas);
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--borda);
+  margin: 28px 0;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  background: var(--fundo);
+  color: var(--lilas);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-family: monospace;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: 2px solid var(--lilas-escuro);
+}
+
+.campo-senha {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--lilas);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--lilas);
+  margin-right: 8px;
+}
+
+/* ===== MODOS (abas) ===== */
+[hidden] {
+  display: none !important;
+}
+
+.modos {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+button.aba {
+  flex: 1;
+  margin-top: 0;
+  padding: 10px;
+  font-size: 0.9rem;
+  background: transparent;
+  border: 1px solid var(--borda);
+  color: var(--texto);
+}
+
+button.aba:hover {
+  border-color: var(--lilas);
+  background: transparent;
+}
+
+button.aba.ativa {
+  background: var(--lilas-escuro);
+  border-color: var(--lilas-escuro);
+  color: white;
+}
+
+#area-base {
+  margin-bottom: 8px;
+}
+
+/* ===== BOTÕES ===== */
+button {
+  width: 100%;
+  padding: 12px;
+  background: var(--lilas-escuro);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+button:hover {
+  background: var(--lilas);
+}
+
+button.secundario {
+  width: auto;
+  margin-top: 0;
+  padding: 0 16px;
+  background: transparent;
+  border: 1px solid var(--lilas-escuro);
+  color: var(--lilas);
+}
+
+button.secundario:hover {
+  background: var(--lilas-escuro);
+  color: white;
+}
+
+.mensagem {
+  min-height: 1.2em;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--forte);
+}
+
+.barra {
+  height: 10px;
+  background: var(--fundo);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 16px 0 8px;
+}
+
+#barra-forca {
+  height: 100%;
+  width: 0;
+  background: var(--fraca);
+  transition: width 0.3s, background 0.3s;
+}
+
+#texto-forca {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+#dicas {
+  list-style: none;
+  font-size: 0.9rem;
+  color: #b9afd1;
+}
+
+#dicas li {
+  margin: 4px 0;
+}
+
+#dicas li::before {
+  content: "💡 ";
+}

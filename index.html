@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Senhas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>🔐 Gerador de Senhas</h1>
+
+
+    <section id="gerador">
+      <div class="campo-senha">
+        <input type="text" id="senha" readonly placeholder="Sua senha aparece aqui">
+        <button id="copiar" class="secundario" type="button" title="Copiar senha">Copiar</button>
+      </div>
+
+     
+      <div class="modos">
+        <button type="button" class="aba ativa" data-modo="zero">Do zero</button>
+        <button type="button" class="aba" data-modo="base">A partir da minha senha</button>
+      </div>
+
+    
+           <div id="area-base" hidden>
+        <input type="text" id="senha-base" placeholder="Digite a senha que você quer melhorar" autocomplete="off">
+      </div>
+
+      <label for="tamanho">
+        <span id="rotulo-tamanho">Tamanho</span>: <span id="valor-tamanho">16</span>
+      </label>
+      <input type="range" id="tamanho" min="8" max="32" value="16">
+
+    
+      <div id="opcoes">
+      <label class="opcao">
+        <input type="checkbox" id="maiusculas" checked>
+        Letras maiúsculas (A-Z)
+      </label>
+      <label class="opcao">
+        <input type="checkbox" id="minusculas" checked>
+        Letras minúsculas (a-z)
+      </label>
+      <label class="opcao">
+        <input type="checkbox" id="numeros" checked>
+        Números (0-9)
+      </label>
+      <label class="opcao">
+        <input type="checkbox" id="simbolos" checked>
+        Símbolos (!@#$...)
+      </label>
+      </div>
+
+      <button id="gerar" type="button">Gerar senha</button>
+      <p id="mensagem" class="mensagem" aria-live="polite"></p>
+    </section>
+
+    <hr>
+
+    <section id="medidor">
+      <h2>Teste a força da sua senha</h2>
+      <input type="password" id="senha-teste" placeholder="Digite uma senha para testar">
+
+      <div class="barra">
+        <div id="barra-forca"></div>
+      </div>
+      <p id="texto-forca">Digite algo acima</p>
+      <ul id="dicas"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
